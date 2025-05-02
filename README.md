@@ -22,7 +22,8 @@ while read -r c; do d=$(echo "$c" | sed 's/\..*$//' | awk '{print "c_"$0".mp4"}'
 
 concat
 ```
-ffmpeg -i "concat:in1.mp4|in2.mp4" -codec copy output.mp4
+(for %i in (*.mp4) do @echo file '%i') > go.txt
+ffmpeg -safe 0 -f concat -i go.txt -c copy out.mp4
 ```
 
 cut
