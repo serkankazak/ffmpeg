@@ -23,7 +23,7 @@ while read -r c; do d=$(echo "$c" | sed 's/\..*$//' | awk '{print "c_"$0".mp4"}'
 concat
 ```
 (for %i in (*.mp4) do @echo file '%i') > go.txt
-ffmpeg -safe 0 -f concat -i go.txt -c copy out.mp4
+ffmpeg -safe 0 -f concat -i go.txt -c:v libx264 out.mp4
 ```
 
 cut
