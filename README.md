@@ -28,7 +28,7 @@ ffmpeg -safe 0 -f concat -i go.txt -c copy out.mp4
 
 cut
 ```
-ffmpeg.exe -ss 00:00:30 -to 06:32:23 -i in.mkv -c copy cut.mkv
+ffmpeg.exe -ss 00:00:30.0 -to 06:32:23.0 -i in.mkv -c copy cut.mkv
 ```
 
 cut & convert
