@@ -9,6 +9,9 @@ record screen
 ```
 ffmpeg.exe -f gdigrab -framerate 30 -i desktop screen.mkv
 ```
+```
+ffmpeg.exe -f gdigrab -framerate 25 -c:v libx264 -g 50 -b:v 4000k -bufsize 8000k -vf format=yuv420p -preset fast -i desktop screen25.mkv
+```
 
 blur at 540, 460 with size 200, 75
 ```
