@@ -30,8 +30,3 @@ cut
 ```
 ffmpeg.exe -ss 00:00:30.0 -to 06:32:23.0 -i in.mkv -c:v libx264 cut.mkv
 ```
-
-cut & convert
-```
-ffmpeg.exe -ss 00:00:30 -to 06:32:23 -i in.mkv -c:v libx264 out.mp4
-```
