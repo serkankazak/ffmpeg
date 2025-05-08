@@ -33,3 +33,18 @@ cut
 ```
 ffmpeg.exe -ss 00:00:30.0 -to 06:32:23.0 -i in.mkv -c:v libx264 cut.mkv
 ```
+
+remove audio
+```
+ffmpeg.exe -i 1.mp4 -c copy -an 1na.mp4
+```
+
+resize
+```
+ffmpeg.exe -i iphonee.mov -s 444x600 iphone.mov
+```
+
+overlay video on top of another video
+```
+ffmpeg.exe -i raspfire.mp4 -i iphone.mov -filter_complex "[1:v]setpts=PTS-STARTPTS+175/TB[overlay]; [0:v][overlay]overlay=enable='between(t,175,273)':x=1319:y=480" output.mp4
+```
