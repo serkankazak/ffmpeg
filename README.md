@@ -31,7 +31,7 @@ ffmpeg -safe 0 -f concat -i go.txt -c:v libx264 out.mp4
 
 cut
 ```
-ffmpeg.exe -ss 00:00:30.0 -to 06:32:23.0 -i in.mkv -c:v libx264 cut.mkv
+ffmpeg.exe -ss 00:00:30.0 -to 06:32:23.0 -i in.mkv -c:v libx264 cut.mp4
 ```
 
 remove audio
