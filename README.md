@@ -48,3 +48,8 @@ overlay video on top of another video
 ```
 ffmpeg.exe -i raspfire.mp4 -i iphone.mov -filter_complex "[1:v]setpts=PTS-STARTPTS+175/TB[overlay]; [0:v][overlay]overlay=enable='between(t,175,273)':x=1319:y=480" output.mp4
 ```
+
+change fps
+```
+ffmpeg.exe -i bot5c.mp4 -filter:v fps=30 bot5cf.mp4
+```
