@@ -53,3 +53,8 @@ change fps
 ```
 ffmpeg.exe -i bot5c.mp4 -filter:v fps=30 bot5cf.mp4
 ```
+
+convert to gif
+```
+ffmpeg -i demo.mp4 -vf "fps=20,scale=300:-1" -loop 1 demo.gif
+```
