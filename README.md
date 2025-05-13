@@ -26,7 +26,13 @@ while read -r c; do d=$(echo "$c" | sed 's/\..*$//' | awk '{print "c_"$0".mp4"}'
 concat
 ```
 (for %i in (*.mp4) do @echo file '%i') > go.txt
-ffmpeg -safe 0 -f concat -i go.txt -c:v libx264 out.mp4
+ffmpeg.exe -safe 0 -f concat -i go.txt -c:v libx264 out.mp4
+```
+
+concat (in bat)
+```
+(for %%i in (*.mp4) do @echo file '%%i') > go.txt
+ffmpeg.exe -safe 0 -f concat -i go.txt -c:v libx264 out.mp4
 ```
 
 cut
@@ -56,5 +62,10 @@ ffmpeg.exe -i bot5c.mp4 -filter:v fps=30 bot5cf.mp4
 
 convert to gif
 ```
-ffmpeg -i demo.mp4 -vf "fps=20,scale=300:-1" -loop 1 demo.gif
+ffmpeg.exe -i demo.mp4 -vf "fps=20,scale=300:-1" -loop 1 demo.gif
+```
+
+crop
+```
+ffmpeg.exe -i in.mp4 -vf "crop=out_w:out_h:x:y" out.mp4
 ```
