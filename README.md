@@ -68,4 +68,10 @@ ffmpeg.exe -i demo.mp4 -vf "fps=20,scale=300:-1" -loop 1 demo.gif
 crop
 ```
 ffmpeg.exe -i in.mp4 -vf "crop=out_w:out_h:x:y" out.mp4
+ffmpeg.exe -i rtsp.mkv -vf "crop=480:850:2:160" rtspc.mkv
+```
+
+rotate
+```
+ffmpeg.exe -i rtspc.mkv -vf "transpose=2" rtspct.mkv
 ```
