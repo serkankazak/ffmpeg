@@ -18,6 +18,11 @@ blur at 540, 460 with size 200, 75
 ffmpeg.exe -i in.mp4 -filter_complex "[0:v]crop=200:75:540:460,avgblur=15[fg];[0:v][fg]overlay=540:460[v]" -map "[v]" -c:v libx264 -preset slow -crf 0 -movflags +faststart blur.mp4
 ```
 
+compress
+```
+ffmpeg.exe -i in.mp4 -c:v libx264 -crf 23 out.mp4
+```
+
 compress all videos in folder
 ```
 while read -r c; do d=$(echo "$c" | sed 's/\..*$//' | awk '{print "c_"$0".mp4"}'); echo "$d"; if [ ! -e "$d" ]; then echo "$c"; ./ffmpeg.exe -nostdin -v error -i "$c" -c:v libx264 -crf 23 -c:a aac "$d" 2> /dev/stdout < /dev/null; fi; done < <(find . -type f -not -iname "ffmpeg*" | sed 's/\.\///' | grep -vE "^c_")
