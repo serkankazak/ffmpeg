@@ -75,3 +75,8 @@ rotate
 ```
 ffmpeg.exe -i rtspc.mkv -vf "transpose=2" rtspct.mkv
 ```
+
+put videos side by side
+```
+ffmpeg.exe -i left.mp4 -i right.mp4 -filter_complex hstack out.mp4
+```
