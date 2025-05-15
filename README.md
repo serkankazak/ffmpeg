@@ -85,3 +85,13 @@ put videos side by side
 ```
 ffmpeg.exe -i left.mp4 -i right.mp4 -filter_complex hstack out.mp4
 ```
+
+stack videos vertically
+```
+ffmpeg.exe -i "buf kali.mp4" -i bufwinc.mp4 -filter_complex vstack abov.mp4
+```
+
+add image to beginning
+```
+ffmpeg.exe -i abovc.mp4 -i abo_github.jpg -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,0,2)'" -pix_fmt yuv420p abovci.mp4
+```
